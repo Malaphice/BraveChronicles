@@ -6,7 +6,7 @@
 visible = true
 margin_right = 655.0
 margin_bottom = 503.0
-window_title = "School"
+window_title = "Schools"
 resizable = true
 script = ExtResource( 1 )
 
@@ -111,19 +111,19 @@ margin_right = 636.0
 margin_bottom = 56.0
 text = "Weapon Schools"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 60.0
 margin_right = 636.0
 margin_bottom = 80.0
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 54.0
 margin_bottom = 20.0
 toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 58.0
 margin_right = 112.0
 margin_bottom = 20.0
@@ -131,7 +131,7 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 116.0
 margin_right = 170.0
 margin_bottom = 20.0
@@ -139,7 +139,7 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 174.0
 margin_right = 228.0
 margin_bottom = 20.0
@@ -147,7 +147,7 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button5" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button5" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 232.0
 margin_right = 286.0
 margin_bottom = 20.0
@@ -155,7 +155,7 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button6" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button6" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 290.0
 margin_right = 344.0
 margin_bottom = 20.0
@@ -163,7 +163,7 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button7" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button7" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 348.0
 margin_right = 402.0
 margin_bottom = 20.0
@@ -171,7 +171,7 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button8" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button8" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 406.0
 margin_right = 460.0
 margin_bottom = 20.0
@@ -179,7 +179,7 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="Button9" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="Button9" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 464.0
 margin_right = 518.0
 margin_bottom = 20.0
@@ -187,62 +187,107 @@ toggle_mode = true
 text = "School"
 icon_align = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 84.0
 margin_right = 636.0
 margin_bottom = 484.0
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 margin_bottom = 400.0
-size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer"]
-margin_bottom = 400.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer/VBoxContainer"]
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer/VBoxContainer"]
-margin_top = 4.0
-margin_bottom = 400.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 margin_left = 4.0
-margin_right = 636.0
-margin_bottom = 400.0
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2"]
-margin_right = 632.0
+margin_right = 148.0
 margin_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
-margin_right = 632.0
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
-margin_top = 4.0
-margin_right = 632.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer"]
+margin_right = 144.0
 margin_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer"]
 visible = false
-margin_left = 426.0
-margin_right = 636.0
-margin_bottom = 400.0
+margin_right = 316.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-visible = false
-margin_left = 426.0
-margin_right = 636.0
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer"]
+margin_right = 144.0
+margin_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.32
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 152.0
+margin_right = 636.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer2"]
+margin_right = 484.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer2/VBoxContainer"]
+visible = false
+margin_right = 487.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="Panel2" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer2"]
+margin_right = 484.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+visible = false
+margin_left = 636.0
+margin_right = 636.0
+margin_bottom = 400.0
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer4"]
+visible = false
+margin_left = 318.0
+margin_right = 412.0
+margin_bottom = 484.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer4/ScrollContainer"]
+margin_right = 94.0
+margin_bottom = 484.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer4"]
+visible = false
+margin_left = 427.0
+margin_right = 636.0
+margin_bottom = 484.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer4/ScrollContainer2"]
+margin_right = 209.0
+margin_bottom = 484.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_Button_toggled"]

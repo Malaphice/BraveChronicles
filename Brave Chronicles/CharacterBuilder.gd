@@ -4,6 +4,8 @@ onready var playerNameLabel = $"PanelContainer/Attributes/Name/Name LineEdit"
 onready var lvLabel = $"PanelContainer/Attributes/Level/Level LineEdit"
 onready var lvDiff =  $"PanelContainer/Attributes/Level/Level Change"
 
+onready var SchoolWindow: = preload("res://SchoolWindowDialog.tscn")
+
 onready var attributeLabelList = [
 	$"PanelContainer/Attributes/Vitality/Vitality Value",
 	$"PanelContainer/Attributes/Mind/Mind Value",
@@ -176,23 +178,41 @@ func UpdateCharacterDetails():
 	playerNameLabel.text = playerName
 	lvLabel.text = String(lvNum)
 	
-	for n in attributeLabelList:
-		attributeLabelList[n].text = String(attributeNumList[n])
+#	for n in attributeNumList:
+#		attributeLabelList[n].text = String(attributeNumList[n])
 	
-#	attributeLabelList[0].text = String(attributeNumList[0])
-#	attributeLabelList[1].text = String(attributeNumList[1])
-#	attributeLabelList[2].text = String(attributeNumList[2])
-#	attributeLabelList[3].text = String(attributeNumList[3])
-#	attributeLabelList[4].text = String(attributeNumList[4])
-#	attributeLabelList[5].text = String(attributeNumList[5])
-#	attributeLabelList[6].text = String(attributeNumList[6])
-#	attributeLabelList[7].text = String(attributeNumList[7])
+	attributeLabelList[0].text = String(attributeNumList[0])
+	attributeLabelList[1].text = String(attributeNumList[1])
+	attributeLabelList[2].text = String(attributeNumList[2])
+	attributeLabelList[3].text = String(attributeNumList[3])
+	attributeLabelList[4].text = String(attributeNumList[4])
+	attributeLabelList[5].text = String(attributeNumList[5])
+	attributeLabelList[6].text = String(attributeNumList[6])
+	attributeLabelList[7].text = String(attributeNumList[7])
 	
 	attributeLabel.text = String(AttributeNum)
 	confirmButton.disabled = true
 	
-	for n in schlLabelList:
-		schlLabelList[n].text = String(schoolRanks[n])
+#	for n in schlLabelList:
+#		schlLabelList[n].text = String(schoolRanks[n])
+	schlLabelList[0].text = String(schoolRanks[0])
+	schlLabelList[1].text = String(schoolRanks[1])
+	schlLabelList[2].text = String(schoolRanks[2])
+	schlLabelList[3].text = String(schoolRanks[3])
+	schlLabelList[4].text = String(schoolRanks[4])
+	schlLabelList[5].text = String(schoolRanks[5])
+	schlLabelList[6].text = String(schoolRanks[6])
+	schlLabelList[7].text = String(schoolRanks[7])
+	schlLabelList[8].text = String(schoolRanks[8])
+	schlLabelList[9].text = String(schoolRanks[9])
+	schlLabelList[10].text = String(schoolRanks[10])
+	schlLabelList[11].text = String(schoolRanks[11])
+	schlLabelList[12].text = String(schoolRanks[12])
+	schlLabelList[13].text = String(schoolRanks[13])
+	schlLabelList[14].text = String(schoolRanks[14])
+	schlLabelList[15].text = String(schoolRanks[15])
+	schlLabelList[16].text = String(schoolRanks[16])
+	schlLabelList[17].text = String(schoolRanks[17])
 	
 
 func _on_MainMenuButton_pressed(id):
@@ -326,6 +346,9 @@ func CalculateSchoolPoints(level):
 	schoolLabel.text = String(schoolPoints)
 
 
-func _on_Magic_School_1_Label_pressed():
-	#$c/SchoolWindow.open()
-	pass # Replace with function body.
+func MagicSchoolButtonPressed(id):
+	GlobalData.abilityTabSelectedSchl = id
+	var dialog = SchoolWindow.instance()
+	add_child(dialog)
+	dialog.popup()
+	#pass # Replace with function body.

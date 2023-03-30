@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://SchoolWindowDialog.tscn" type="PackedScene" id=1]
-[ext_resource path="res://CharacterBuilder.gd" type="Script" id=2]
+[ext_resource path="res://CharacterBuilder.gd" type="Script" id=1]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -431,26 +430,19 @@ margin_right = 99.0
 margin_bottom = 188.0
 
 [node name="Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
-margin_right = 149.0
+margin_right = 161.0
 margin_bottom = 14.0
 text = "Arcane Schools"
 
 [node name="Magic School 1" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
 margin_top = 18.0
-margin_right = 149.0
+margin_right = 161.0
 margin_bottom = 38.0
 
 [node name="Magic School 1 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1"]
 margin_right = 78.0
 margin_bottom = 20.0
 text = "Abjuration"
-
-[node name="SchoolWindowDialog" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Label" instance=ExtResource( 1 )]
-visible = false
-margin_left = -21.0
-margin_top = -7.0
-margin_right = 634.0
-margin_bottom = 496.0
 
 [node name="Magic School 1 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1"]
 margin_left = 82.0
@@ -473,241 +465,233 @@ text = "+"
 
 [node name="Magic School 2" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
 margin_top = 42.0
-margin_right = 149.0
+margin_right = 161.0
 margin_bottom = 62.0
 
-[node name="Magic School 2 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2"]
-margin_top = 3.0
-margin_right = 73.0
-margin_bottom = 17.0
+[node name="Magic School 2 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2"]
+margin_right = 85.0
+margin_bottom = 20.0
 text = "Conjuration"
 
 [node name="Magic School 2 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2"]
-margin_left = 77.0
+margin_left = 89.0
 margin_top = 3.0
-margin_right = 85.0
+margin_right = 97.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Magic School 2 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2"]
-margin_left = 89.0
-margin_right = 106.0
+margin_left = 101.0
+margin_right = 118.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Magic School 2 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2"]
-margin_left = 110.0
-margin_right = 130.0
+margin_left = 122.0
+margin_right = 142.0
 margin_bottom = 20.0
 text = "+"
 
 [node name="Magic School 3" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
 margin_top = 66.0
-margin_right = 149.0
+margin_right = 161.0
 margin_bottom = 86.0
 
-[node name="Magic School 3 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_top = 3.0
-margin_right = 84.0
-margin_bottom = 17.0
+[node name="Magic School 3 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
+margin_right = 96.0
+margin_bottom = 20.0
 text = "Enchantment"
 
 [node name="Magic School 3 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_left = 88.0
+margin_left = 100.0
 margin_top = 3.0
-margin_right = 96.0
+margin_right = 108.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Magic School 3 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_left = 100.0
-margin_right = 117.0
+margin_left = 112.0
+margin_right = 129.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Magic School 3 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_left = 121.0
-margin_right = 141.0
+margin_left = 133.0
+margin_right = 153.0
 margin_bottom = 20.0
 text = "+"
 
 [node name="Magic School 4" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
 margin_top = 90.0
-margin_right = 149.0
+margin_right = 161.0
 margin_bottom = 110.0
 
-[node name="Magic School 4 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_top = 3.0
-margin_right = 61.0
-margin_bottom = 17.0
+[node name="Magic School 4 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
+margin_right = 73.0
+margin_bottom = 20.0
 text = "Evocation"
 
 [node name="Magic School 4 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_left = 65.0
-margin_top = 3.0
-margin_right = 73.0
-margin_bottom = 17.0
-text = "0"
-
-[node name="Magic School 4 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_left = 77.0
-margin_right = 94.0
-margin_bottom = 20.0
-text = "-"
-
-[node name="Magic School 4 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_left = 98.0
-margin_right = 118.0
-margin_bottom = 20.0
-text = "+"
-
-[node name="Magic School 5" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
-margin_top = 114.0
-margin_right = 149.0
-margin_bottom = 134.0
-
-[node name="Magic School 5 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_top = 3.0
-margin_right = 43.0
-margin_bottom = 17.0
-text = "llusion"
-
-[node name="Magic School 5 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_left = 47.0
-margin_top = 3.0
-margin_right = 55.0
-margin_bottom = 17.0
-text = "0"
-
-[node name="Magic School 5 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_left = 59.0
-margin_right = 76.0
-margin_bottom = 20.0
-text = "-"
-
-[node name="Magic School 5 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_left = 80.0
-margin_right = 100.0
-margin_bottom = 20.0
-text = "+"
-
-[node name="Magic School 6" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
-margin_top = 138.0
-margin_right = 149.0
-margin_bottom = 158.0
-
-[node name="Magic School 6 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_top = 3.0
-margin_right = 66.0
-margin_bottom = 17.0
-text = "Mysticism"
-
-[node name="Magic School 6 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_left = 70.0
-margin_top = 3.0
-margin_right = 78.0
-margin_bottom = 17.0
-text = "0"
-
-[node name="Magic School 6 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_left = 82.0
-margin_right = 99.0
-margin_bottom = 20.0
-text = "-"
-
-[node name="Magic School 6 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_left = 103.0
-margin_right = 123.0
-margin_bottom = 20.0
-text = "+"
-
-[node name="Magic School 7" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
-margin_top = 162.0
-margin_right = 149.0
-margin_bottom = 182.0
-
-[node name="Magic School 7 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
-margin_top = 3.0
-margin_right = 80.0
-margin_bottom = 17.0
-text = "Necromancy"
-
-[node name="Magic School 7 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
-margin_left = 84.0
-margin_top = 3.0
-margin_right = 92.0
-margin_bottom = 17.0
-text = "0"
-
-[node name="Magic School 7 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
-margin_left = 96.0
-margin_right = 113.0
-margin_bottom = 20.0
-text = "-"
-
-[node name="Magic School 7 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
-margin_left = 117.0
-margin_right = 137.0
-margin_bottom = 20.0
-text = "+"
-
-[node name="Magic School 8" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
-margin_top = 186.0
-margin_right = 149.0
-margin_bottom = 206.0
-
-[node name="Magic School 8 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
-margin_top = 3.0
-margin_right = 73.0
-margin_bottom = 17.0
-text = "Restoration"
-
-[node name="Magic School 8 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
 margin_left = 77.0
 margin_top = 3.0
 margin_right = 85.0
 margin_bottom = 17.0
 text = "0"
 
-[node name="Magic School 8 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
+[node name="Magic School 4 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
 margin_left = 89.0
 margin_right = 106.0
 margin_bottom = 20.0
 text = "-"
 
-[node name="Magic School 8 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
+[node name="Magic School 4 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
 margin_left = 110.0
 margin_right = 130.0
 margin_bottom = 20.0
 text = "+"
 
-[node name="Magic School 9" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
-margin_top = 210.0
-margin_right = 149.0
-margin_bottom = 230.0
+[node name="Magic School 5" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
+margin_top = 114.0
+margin_right = 161.0
+margin_bottom = 134.0
 
-[node name="Magic School 9 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+[node name="Magic School 5 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
+margin_right = 55.0
+margin_bottom = 20.0
+text = "llusion"
+
+[node name="Magic School 5 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
+margin_left = 59.0
 margin_top = 3.0
-margin_right = 92.0
+margin_right = 67.0
 margin_bottom = 17.0
-text = "Transmutation"
+text = "0"
 
-[node name="Magic School 9 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+[node name="Magic School 5 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
+margin_left = 71.0
+margin_right = 88.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Magic School 5 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
+margin_left = 92.0
+margin_right = 112.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Magic School 6" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
+margin_top = 138.0
+margin_right = 161.0
+margin_bottom = 158.0
+
+[node name="Magic School 6 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
+margin_right = 78.0
+margin_bottom = 20.0
+text = "Mysticism"
+
+[node name="Magic School 6 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
+margin_left = 82.0
+margin_top = 3.0
+margin_right = 90.0
+margin_bottom = 17.0
+text = "0"
+
+[node name="Magic School 6 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
+margin_left = 94.0
+margin_right = 111.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Magic School 6 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
+margin_left = 115.0
+margin_right = 135.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Magic School 7" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
+margin_top = 162.0
+margin_right = 161.0
+margin_bottom = 182.0
+
+[node name="Magic School 7 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
+margin_right = 92.0
+margin_bottom = 20.0
+text = "Necromancy"
+
+[node name="Magic School 7 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
 margin_left = 96.0
 margin_top = 3.0
 margin_right = 104.0
 margin_bottom = 17.0
 text = "0"
 
-[node name="Magic School 9 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+[node name="Magic School 7 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
 margin_left = 108.0
 margin_right = 125.0
 margin_bottom = 20.0
 text = "-"
 
-[node name="Magic School 9 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+[node name="Magic School 7 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
 margin_left = 129.0
 margin_right = 149.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Magic School 8" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
+margin_top = 186.0
+margin_right = 161.0
+margin_bottom = 206.0
+
+[node name="Magic School 8 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
+margin_right = 85.0
+margin_bottom = 20.0
+text = "Restoration"
+
+[node name="Magic School 8 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
+margin_left = 89.0
+margin_top = 3.0
+margin_right = 97.0
+margin_bottom = 17.0
+text = "0"
+
+[node name="Magic School 8 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
+margin_left = 101.0
+margin_right = 118.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Magic School 8 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8"]
+margin_left = 122.0
+margin_right = 142.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Magic School 9" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
+margin_top = 210.0
+margin_right = 161.0
+margin_bottom = 230.0
+
+[node name="Magic School 9 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+margin_right = 104.0
+margin_bottom = 20.0
+text = "Transmutation"
+
+[node name="Magic School 9 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+margin_left = 108.0
+margin_top = 3.0
+margin_right = 116.0
+margin_bottom = 17.0
+text = "0"
+
+[node name="Magic School 9 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+margin_left = 120.0
+margin_right = 137.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Magic School 9 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9"]
+margin_left = 141.0
+margin_right = 161.0
 margin_bottom = 20.0
 text = "+"
 
@@ -726,28 +710,27 @@ margin_top = 18.0
 margin_right = 195.0
 margin_bottom = 38.0
 
-[node name="Physical School 1 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1"]
-margin_top = 3.0
-margin_right = 56.0
-margin_bottom = 17.0
+[node name="Physical School 1 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1"]
+margin_right = 68.0
+margin_bottom = 20.0
 text = "Alchemy"
 
 [node name="Physical School 1 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1"]
-margin_left = 60.0
+margin_left = 72.0
 margin_top = 3.0
-margin_right = 68.0
+margin_right = 80.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 1 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1"]
-margin_left = 72.0
-margin_right = 89.0
+margin_left = 84.0
+margin_right = 101.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 1 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1"]
-margin_left = 93.0
-margin_right = 113.0
+margin_left = 105.0
+margin_right = 125.0
 margin_bottom = 20.0
 text = "+"
 
@@ -756,28 +739,27 @@ margin_top = 42.0
 margin_right = 195.0
 margin_bottom = 62.0
 
-[node name="Physical School 2 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2"]
-margin_top = 3.0
-margin_right = 55.0
-margin_bottom = 17.0
+[node name="Physical School 2 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2"]
+margin_right = 67.0
+margin_bottom = 20.0
 text = "Armours"
 
 [node name="Physical School 2 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2"]
-margin_left = 59.0
+margin_left = 71.0
 margin_top = 3.0
-margin_right = 67.0
+margin_right = 79.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 2 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2"]
-margin_left = 71.0
-margin_right = 88.0
+margin_left = 83.0
+margin_right = 100.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 2 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2"]
-margin_left = 92.0
-margin_right = 112.0
+margin_left = 104.0
+margin_right = 124.0
 margin_bottom = 20.0
 text = "+"
 
@@ -786,28 +768,27 @@ margin_top = 66.0
 margin_right = 195.0
 margin_bottom = 86.0
 
-[node name="Physical School 3 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3"]
-margin_top = 3.0
-margin_right = 102.0
-margin_bottom = 17.0
+[node name="Physical School 3 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3"]
+margin_right = 114.0
+margin_bottom = 20.0
 text = "Heavy Weapons"
 
 [node name="Physical School 3 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3"]
-margin_left = 106.0
+margin_left = 118.0
 margin_top = 3.0
-margin_right = 114.0
+margin_right = 126.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 3 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3"]
-margin_left = 118.0
-margin_right = 135.0
+margin_left = 130.0
+margin_right = 147.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 3 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3"]
-margin_left = 139.0
-margin_right = 159.0
+margin_left = 151.0
+margin_right = 171.0
 margin_bottom = 20.0
 text = "+"
 
@@ -816,28 +797,27 @@ margin_top = 90.0
 margin_right = 195.0
 margin_bottom = 110.0
 
-[node name="Physical School 4 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4"]
-margin_top = 3.0
-margin_right = 66.0
-margin_bottom = 17.0
+[node name="Physical School 4 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4"]
+margin_right = 78.0
+margin_bottom = 20.0
 text = "Machinery"
 
 [node name="Physical School 4 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4"]
-margin_left = 70.0
+margin_left = 82.0
 margin_top = 3.0
-margin_right = 78.0
+margin_right = 90.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 4 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4"]
-margin_left = 82.0
-margin_right = 99.0
+margin_left = 94.0
+margin_right = 111.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 4 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4"]
-margin_left = 103.0
-margin_right = 123.0
+margin_left = 115.0
+margin_right = 135.0
 margin_bottom = 20.0
 text = "+"
 
@@ -846,28 +826,27 @@ margin_top = 114.0
 margin_right = 195.0
 margin_bottom = 134.0
 
-[node name="Physical School 5 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5"]
-margin_top = 3.0
-margin_right = 46.0
-margin_bottom = 17.0
+[node name="Physical School 5 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5"]
+margin_right = 58.0
+margin_bottom = 20.0
 text = "Medics"
 
 [node name="Physical School 5 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5"]
-margin_left = 50.0
+margin_left = 62.0
 margin_top = 3.0
-margin_right = 58.0
+margin_right = 70.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 5 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5"]
-margin_left = 62.0
-margin_right = 79.0
+margin_left = 74.0
+margin_right = 91.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 5 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5"]
-margin_left = 83.0
-margin_right = 103.0
+margin_left = 95.0
+margin_right = 115.0
 margin_bottom = 20.0
 text = "+"
 
@@ -876,28 +855,27 @@ margin_top = 138.0
 margin_right = 195.0
 margin_bottom = 158.0
 
-[node name="Physical School 6 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6"]
-margin_top = 3.0
-margin_right = 103.0
-margin_bottom = 17.0
+[node name="Physical School 6 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6"]
+margin_right = 115.0
+margin_bottom = 20.0
 text = "Melee Weapons"
 
 [node name="Physical School 6 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6"]
-margin_left = 107.0
+margin_left = 119.0
 margin_top = 3.0
-margin_right = 115.0
+margin_right = 127.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 6 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6"]
-margin_left = 119.0
-margin_right = 136.0
+margin_left = 131.0
+margin_right = 148.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 6 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6"]
-margin_left = 140.0
-margin_right = 160.0
+margin_left = 152.0
+margin_right = 172.0
 margin_bottom = 20.0
 text = "+"
 
@@ -906,28 +884,27 @@ margin_top = 162.0
 margin_right = 195.0
 margin_bottom = 182.0
 
-[node name="Physical School 7 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7"]
-margin_top = 3.0
-margin_right = 109.0
-margin_bottom = 17.0
+[node name="Physical School 7 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7"]
+margin_right = 121.0
+margin_bottom = 20.0
 text = "Ranged Weapons"
 
 [node name="Physical School 7 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7"]
-margin_left = 113.0
+margin_left = 125.0
 margin_top = 3.0
-margin_right = 121.0
+margin_right = 133.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 7 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7"]
-margin_left = 125.0
-margin_right = 142.0
+margin_left = 137.0
+margin_right = 154.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 7 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7"]
-margin_left = 146.0
-margin_right = 166.0
+margin_left = 158.0
+margin_right = 178.0
 margin_bottom = 20.0
 text = "+"
 
@@ -936,28 +913,27 @@ margin_top = 186.0
 margin_right = 195.0
 margin_bottom = 206.0
 
-[node name="Physical School 8 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8"]
-margin_top = 3.0
-margin_right = 44.0
-margin_bottom = 17.0
+[node name="Physical School 8 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8"]
+margin_right = 56.0
+margin_bottom = 20.0
 text = "Stealth"
 
 [node name="Physical School 8 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8"]
-margin_left = 48.0
+margin_left = 60.0
 margin_top = 3.0
-margin_right = 56.0
+margin_right = 68.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 8 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8"]
-margin_left = 60.0
-margin_right = 77.0
+margin_left = 72.0
+margin_right = 89.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 8 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8"]
-margin_left = 81.0
-margin_right = 101.0
+margin_left = 93.0
+margin_right = 113.0
 margin_bottom = 20.0
 text = "+"
 
@@ -966,28 +942,27 @@ margin_top = 210.0
 margin_right = 195.0
 margin_bottom = 230.0
 
-[node name="Physical School 9 Label" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9"]
-margin_top = 3.0
-margin_right = 59.0
-margin_bottom = 17.0
+[node name="Physical School 9 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9"]
+margin_right = 71.0
+margin_bottom = 20.0
 text = "Unarmed"
 
 [node name="Physical School 9 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9"]
-margin_left = 63.0
+margin_left = 75.0
 margin_top = 3.0
-margin_right = 71.0
+margin_right = 83.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Physical School 9 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9"]
-margin_left = 75.0
-margin_right = 92.0
+margin_left = 87.0
+margin_right = 104.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Physical School 9 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9"]
-margin_left = 96.0
-margin_right = 116.0
+margin_left = 108.0
+margin_right = 128.0
 margin_bottom = 20.0
 text = "+"
 
@@ -1879,41 +1854,58 @@ margin_bottom = 591.0
 [connection signal="pressed" from="PanelContainer/Attributes/Technique/Technique Value/Tch Plus Button" to="." method="onAttributeButtonPressPlus" binds= [ true, 7 ]]
 [connection signal="pressed" from="PanelContainer/Attributes/HBoxContainer3/Confirm" to="." method="_on_Confirm_pressed"]
 [connection signal="pressed" from="PanelContainer/Attributes/HBoxContainer3/Revert" to="." method="_on_Revert_pressed"]
-[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Label" to="." method="_on_Magic_School_1_Label_pressed"]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Label" to="." method="MagicSchoolButtonPressed" binds= [ 0 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 0 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 0 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2/Magic School 2 Label" to="." method="MagicSchoolButtonPressed" binds= [ 1 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2/Magic School 2 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 1 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2/Magic School 2 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 1 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3/Magic School 3 Label" to="." method="MagicSchoolButtonPressed" binds= [ 2 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3/Magic School 3 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 2 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3/Magic School 3 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 2 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4/Magic School 4 Label" to="." method="MagicSchoolButtonPressed" binds= [ 3 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4/Magic School 4 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 3 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4/Magic School 4 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 3 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5/Magic School 5 Label" to="." method="MagicSchoolButtonPressed" binds= [ 4 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5/Magic School 5 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 4 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5/Magic School 5 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 4 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6/Magic School 6 Label" to="." method="MagicSchoolButtonPressed" binds= [ 5 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6/Magic School 6 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 5 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6/Magic School 6 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 5 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7/Magic School 7 Label" to="." method="MagicSchoolButtonPressed" binds= [ 6 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7/Magic School 7 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 6 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7/Magic School 7 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 6 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8/Magic School 8 Label" to="." method="MagicSchoolButtonPressed" binds= [ 7 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8/Magic School 8 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 7 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8/Magic School 8 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 7 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9/Magic School 9 Label" to="." method="MagicSchoolButtonPressed" binds= [ 8 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9/Magic School 9 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 8 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9/Magic School 9 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 8 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1/Physical School 1 Label" to="." method="MagicSchoolButtonPressed" binds= [ 9 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1/Physical School 1 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 9 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1/Physical School 1 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 9 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2/Physical School 2 Label" to="." method="MagicSchoolButtonPressed" binds= [ 10 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2/Physical School 2 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 10 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2/Physical School 2 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 10 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3/Physical School 3 Label" to="." method="MagicSchoolButtonPressed" binds= [ 11 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3/Physical School 3 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 11 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3/Physical School 3 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 11 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4/Physical School 4 Label" to="." method="MagicSchoolButtonPressed" binds= [ 12 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4/Physical School 4 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 12 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4/Physical School 4 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 12 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5/Physical School 5 Label" to="." method="MagicSchoolButtonPressed" binds= [ 13 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5/Physical School 5 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 13 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5/Physical School 5 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 13 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6/Physical School 6 Label" to="." method="MagicSchoolButtonPressed" binds= [ 14 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6/Physical School 6 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 14 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6/Physical School 6 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 14 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7/Physical School 7 Label" to="." method="MagicSchoolButtonPressed" binds= [ 15 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7/Physical School 7 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 15 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7/Physical School 7 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 15 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8/Physical School 8 Label" to="." method="MagicSchoolButtonPressed" binds= [ 16 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8/Physical School 8 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 16 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8/Physical School 8 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 16 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Label" to="." method="MagicSchoolButtonPressed" binds= [ 17 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 17 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 17 ]]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

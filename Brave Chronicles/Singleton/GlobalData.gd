@@ -2,20 +2,7 @@ extends Node
 
 
 var playerFilePath = "user://player_data.json"
-
-#var default_data = {
-#	"name" : "New Player",
-#	"lv" : 1,
-#	"vit" : 10,
-#	"mnd" : 10,
-#	"str" : 10,
-#	"pwr" : 10,
-#	"def" : 10,
-#	"res" : 10,
-#	"spd" : 10,
-#	"tch" : 10,
-#	"AttributePoints" : 10
-#}
+var abilityTabSelectedSchl;
 
 var default_data := {
 	"name" : "New Player",
@@ -87,6 +74,7 @@ var current_data = default_data
 
 func _ready():
 	current_data = default_data
+	abilityTabSelectedSchl = 0
 	print(OS.get_user_data_dir())
 
 func reset_data():
