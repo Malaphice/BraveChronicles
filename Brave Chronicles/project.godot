@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Brave Chronicles"
-run/main_scene="res://CharacterBuilder01.tscn"
+run/main_scene="res://CharacterBuilder.tscn"
 
 [autoload]
 
