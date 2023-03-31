@@ -19,9 +19,8 @@ onready var schlToggleButton = [
 	$"MarginContainer/VBoxContainer/HBoxContainer2/Button7",
 	$"MarginContainer/VBoxContainer/HBoxContainer2/Button8",
 	$"MarginContainer/VBoxContainer/HBoxContainer2/Button9"]
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+onready var skillDetail = $"MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer2/VBoxContainer/RichTextLabel"
 
 onready var skillButtonList = []
 
@@ -34,7 +33,7 @@ func _ready():
 	var button1 = Button.new()
 	#button1.connect("button_down", self, _on_SkillButton_Pressed())
 	
-	for n in 5:
+	for n in 30:
 		skillButtonList.append(Button.new())
 		skillButtonList[n].text = "Skill " + String(n + 1)
 		skillButtonList[n].toggle_mode = true
@@ -45,6 +44,9 @@ func _ready():
 
 
 func _on_SkillButton_Pressed(id):
-	print("skill button :" + String(id) + " pressed")
-	pass # Replace with function body.
+	for n in 30:
+		if (n != id):
+			skillButtonList[n].pressed = false
+	print("skill button :" + String(id + 1) + " pressed")
+	skillDetail.text = "Skill " + String(id + 1)
 
