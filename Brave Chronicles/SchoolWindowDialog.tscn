@@ -3,7 +3,6 @@
 [ext_resource path="res://SchoolWindowDialog.gd" type="Script" id=1]
 
 [node name="SchoolWindowDialog" type="WindowDialog"]
-visible = true
 margin_right = 655.0
 margin_bottom = 503.0
 window_title = "Schools"
@@ -213,12 +212,13 @@ size_flags_stretch_ratio = 0.3
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer"]
 visible = false
-margin_right = 316.0
-margin_bottom = 91.0
+margin_right = 144.0
+margin_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer"]
+visible = false
 margin_right = 144.0
 margin_bottom = 400.0
 size_flags_horizontal = 3

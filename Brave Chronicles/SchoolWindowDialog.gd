@@ -23,6 +23,7 @@ onready var schlToggleButton = [
 # var a = 2
 # var b = "text"
 
+onready var skillButtonList = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,9 +32,19 @@ func _ready():
 	schlToggleButton[GlobalData.abilityTabSelectedSchl].pressed = true;
 	#schlToggleButton[0].pressed = true;
 	var button1 = Button.new()
-	$MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer.add_child(button1)
+	#button1.connect("button_down", self, _on_SkillButton_Pressed())
+	
+	for n in 5:
+		skillButtonList.append(Button.new())
+		skillButtonList[n].text = "Skill " + String(n + 1)
+		skillButtonList[n].toggle_mode = true
+		skillButtonList[n].connect("button_down", self, "_on_SkillButton_Pressed", [n])
+		$MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer.add_child(skillButtonList[n])
+		#skillButtonList[n].pressed.connect(_on_SkillButton_Pressed)
+	
 
 
-func _on_Button_toggled(button_pressed):
+func _on_SkillButton_Pressed(id):
+	print("skill button :" + String(id) + " pressed")
 	pass # Replace with function body.
 

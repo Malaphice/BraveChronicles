@@ -82,7 +82,6 @@ func _ready():
 	schoolPoints = int(schoolLabel.text)
 	confirmButton.disabled = true
 	revertButton.disabled = true
-	
 	CalculateAttributes(lvNum)
 	CalculateSchoolPoints(lvNum)
 	UpdateCharacterDetails()
