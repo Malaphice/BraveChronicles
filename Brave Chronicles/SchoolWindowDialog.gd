@@ -10,23 +10,24 @@ onready var schlToggleButton = [
 	$"MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button7",
 	$"MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button8",
 	$"MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button9",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button2",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button3",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button4",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button5",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button6",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button7",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button8",
-	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button9"]
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button2",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button3",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button4",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button5",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button6",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button7",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button8",
+	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button9"]
 
-onready var skillDetail = $"MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer2/VBoxContainer/RichTextLabel"
+onready var artList = $"MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer"
+onready var artDetail = $"MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer2/VBoxContainer/RichTextLabel"
 
-var skillButtonList = []
+var artButtonList = []
 
 var schoolButtonID;
 
-var skillData
+var artData
 
 var artsFilePath = "res://CombatArtsSample.json"
 var playerFilePath = "user://player_data.json"
@@ -59,42 +60,68 @@ func _ready():
 	schlToggleButton[GlobalData.abilityTabSelectedSchl].pressed = true;
 	#schlToggleButton[0].pressed = true;
 	var button1 = Button.new()
-	#button1.connect("button_down", self, _on_SkillButton_Pressed())
+	#button1.connect("button_down", self, _on_artButton_Pressed())
 	
 	load_data()
 	
-	print(skillData.size())
+	print(artData.size())
 	
 	var num = 0
-	var skillName = ""
-	var selectedSkill = schlToggleButton[schoolButtonID].text
-	for skill in skillData:
-		skillName = String(skill.School)
-		if(selectedSkill in skillName):
-			skillButtonList.append(Button.new())
-			skillButtonList[num].text = skill.Name
-			skillButtonList[num].toggle_mode = true
-			skillButtonList[num].connect("button_down", self, "_on_SkillButton_Pressed", [num, skill])
-			$MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer.add_child(skillButtonList[num])
-			num += 1
+	var artName = ""
+	#var selectedart = schlToggleButton[schoolButtonID].text
+	for art in artData:
+		artButtonList.append(Button.new())
+		artButtonList[num].text = art.Name
+		artButtonList[num].toggle_mode = true
+		artButtonList[num].connect("button_down", self, "_on_artButton_Pressed", [num, art])
+		artList.add_child(artButtonList[num])
+		if(schlToggleButton[schoolButtonID].text != art.School):
+			artButtonList[num].hide()
+		num += 1
+		#artName = String(art.School)
+#		if(schlToggleButton[schoolButtonID].text in art.School):
+#			artButtonList.append(Button.new())
+#			artButtonList[num].text = art.Name
+#			artButtonList[num].toggle_mode = true
+#			artButtonList[num].connect("button_down", self, "_on_artButton_Pressed", [num, art])
+#			artList.add_child(artButtonList[num])
+#			num += 1
 	
-#	for n in skillData.size():
-#		skillButtonList.append(Button.new())
-#		#skillButtonList[n].text = "Skill " + String(n + 1)
-#		skillButtonList[n].text = skillData[n]
-#		skillButtonList[n].toggle_mode = true
-#		skillButtonList[n].connect("button_down", self, "_on_SkillButton_Pressed", [n])
-#		$MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer.add_child(skillButtonList[n])
-#		#skillButtonList[n].pressed.connect(_on_SkillButton_Pressed)
+#	for n in artData.size():
+#		artButtonList.append(Button.new())
+#		#artButtonList[n].text = "art " + String(n + 1)
+#		artButtonList[n].text = artData[n]
+#		artButtonList[n].toggle_mode = true
+#		artButtonList[n].connect("button_down", self, "_on_artButton_Pressed", [n])
+#		$MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer.add_child(artButtonList[n])
+#		#artButtonList[n].pressed.connect(_on_artButton_Pressed)
 	
 
 
-func _on_SkillButton_Pressed(num, skill):
-	for n in skillData.size():
-		if (skillButtonList[n].text != skill.Name):
-			skillButtonList[n].pressed = false
-	#print("skill button :" + String(id + 1) + " pressed")
-	skillDetail.text = "Name: " + skill.Name + "\n" + "School:" + skill.School + " " + skill.Cost + "\n" + skill.Cost + "\n" + skill.Description + "\n" + skill.Effect
+func _on_artButton_Pressed(num, art):
+	for n in artData.size():
+		if (artButtonList[n].text != art.Name):
+			artButtonList[n].pressed = false
+	#print("art button :" + String(id + 1) + " pressed")
+	artDetail.text = "Name: " + art.Name + "\n" + "School:" + art.School + " " + art.Cost + "\n" + art.Cost + "\n" + art.Description + "\n" + art.Effect
+
+func filterArts():
+	var num = 0
+	for art in artData:
+		if(schlToggleButton[schoolButtonID].text != art.School):
+			artButtonList[num].hide()
+		else:
+			artButtonList[num].show()
+		num += 1
+	
+	artDetail.text = ""
+	
+	for n in artData.size():
+		artButtonList[n].pressed = false
+
+func schoolButtonPress(id):
+	schoolButtonID = id
+	filterArts()
 
 func load_data():
 	
@@ -109,4 +136,4 @@ func load_data():
 	
 	file.close()
 	
-	skillData = data
+	artData = data

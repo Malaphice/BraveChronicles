@@ -132,6 +132,7 @@ margin_bottom = 80.0
 scroll_vertical_enabled = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer2"]
+visible = false
 margin_right = 636.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
@@ -200,6 +201,83 @@ text = "School"
 icon_align = 1
 
 [node name="Button9" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2"]
+margin_left = 464.0
+margin_right = 518.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer2"]
+margin_right = 636.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 13
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_right = 54.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_left = 58.0
+margin_right = 112.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_left = 116.0
+margin_right = 170.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_left = 174.0
+margin_right = 228.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button5" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_left = 232.0
+margin_right = 286.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button6" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_left = 290.0
+margin_right = 344.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button7" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_left = 348.0
+margin_right = 402.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button8" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
+margin_left = 406.0
+margin_right = 460.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "School"
+icon_align = 1
+
+[node name="Button9" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer"]
 margin_left = 464.0
 margin_right = 518.0
 margin_bottom = 20.0
@@ -318,4 +396,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button" to="." method="schoolButtonPress" binds= [ 0 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button2" to="." method="schoolButtonPress" binds= [ 1 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button3" to="." method="schoolButtonPress" binds= [ 2 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button4" to="." method="schoolButtonPress" binds= [ 3 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button5" to="." method="schoolButtonPress" binds= [ 4 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button6" to="." method="schoolButtonPress" binds= [ 5 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button7" to="." method="schoolButtonPress" binds= [ 6 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button8" to="." method="schoolButtonPress" binds= [ 7 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Button9" to="." method="schoolButtonPress" binds= [ 8 ]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2/Button" to="." method="_on_Button_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button" to="." method="schoolButtonPress" binds= [ 9 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button2" to="." method="schoolButtonPress" binds= [ 10 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button3" to="." method="schoolButtonPress" binds= [ 11 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button4" to="." method="schoolButtonPress" binds= [ 12 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button5" to="." method="schoolButtonPress" binds= [ 13 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button6" to="." method="schoolButtonPress" binds= [ 14 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button7" to="." method="schoolButtonPress" binds= [ 15 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button8" to="." method="schoolButtonPress" binds= [ 16 ]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button9" to="." method="schoolButtonPress" binds= [ 17 ]]
