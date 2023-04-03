@@ -70,6 +70,27 @@ var default_data := {
 		}
 }
 
+var schoolList = [
+	"Abduration",
+	"Conjuration",
+	"Enchantment",
+	"Evocation",
+	"Illusion",
+	"Mysticism",
+	"Necromancy",
+	"Restoration",
+	"Transmutation",
+	"Alchemy",
+	"Armours",
+	"Artillery",
+	"Machinery",
+	"Medics",
+	"MeleeArms",
+	"RangedArms",
+	"Stealth",
+	"Unarmed"
+]
+
 var current_data = default_data
 
 func _ready():
