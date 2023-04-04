@@ -20,17 +20,26 @@ onready var schlToggleButton = [
 	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button8",
 	$"MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer/Button9"]
 
-onready var artList = $"MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer/VBoxContainer"
-onready var artDetail = $"MarginContainer/VBoxContainer/HBoxContainer3/ScrollContainer2/VBoxContainer/RichTextLabel"
+onready var artList = $"MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer/VBoxContainer"
+onready var artDetail = $"MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/RichTextLabel"
+onready var artLearn = $"MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/LearnArt"
+
+onready var schlFilterList = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton"
+onready var artLearnedButton = $"MarginContainer/VBoxContainer/Learned Arts"
 
 var artButtonList = []
 
 var schoolButtonID;
 
 var artData
+var selectedArt
 
 var artsFilePath = "res://CombatArtsSample.json"
 var playerFilePath = "user://player_data.json"
+var learnedArtList = []
+var leanedArtLimit
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -57,16 +66,32 @@ func _ready():
 	schlToggleButton[16].text = "Stealth"
 	schlToggleButton[17].text = "Unarmed"
 	
+	var num = 0
+	
+	schlFilterList.add_item("All Schools", -1)
+	
+	for schl in GlobalData.schoolList:
+		schlFilterList.add_item(schl, num)
+		if(num == GlobalData.abilityTabSelectedSchl):
+			schlFilterList.selected = num + 1
+		num += 1
+	
+	#schlFilterList.connect("button_down", self, "schoolOptionPress" [schlFilterList.get_index()])
+	#schlFilterList.connect("button_down", self, "schoolOptionPress")
+	
+	num = 0
+	
 	schlToggleButton[GlobalData.abilityTabSelectedSchl].pressed = true;
 	#schlToggleButton[0].pressed = true;
+	leanedArtLimit = GlobalData.current_data.Art.LearnLimit
 	var button1 = Button.new()
 	#button1.connect("button_down", self, _on_artButton_Pressed())
 	
 	load_data()
-	
+	getArts()
+	artLearn.hide()
 	print(artData.size())
 	
-	var num = 0
 	var artName = ""
 	#var selectedart = schlToggleButton[schoolButtonID].text
 	for art in artData:
@@ -104,6 +129,16 @@ func _on_artButton_Pressed(num, art):
 			artButtonList[n].pressed = false
 	#print("art button :" + String(id + 1) + " pressed")
 	artDetail.text = "Name: " + art.Name + "\n" + "School:" + art.School + " " + art.Cost + "\n" + art.Cost + "\n" + art.Description + "\n" + art.Effect
+	selectedArt = art.Name
+	artLearn.show()
+	if (learnedArtList.has(art.Name)):
+		artLearn.pressed = true
+	else:
+		artLearn.pressed = false
+
+func unfilterArts():
+	for n in artData.size():
+		artButtonList[n].show()
 
 func filterArts():
 	var num = 0
@@ -115,6 +150,30 @@ func filterArts():
 		num += 1
 	
 	artDetail.text = ""
+	selectedArt = ""
+	artLearn.hide()
+	
+	for n in artData.size():
+		artButtonList[n].pressed = false
+
+func filterLeanedArts():
+	var num = 0
+	
+	if(artLearnedButton.pressed == true):
+		for art in artData:
+			if(learnedArtList.find(artButtonList[num].text) == -1):
+				artButtonList[num].hide()
+			elif (art.school == GlobalData.schoolList[num]):
+				artButtonList[num].show()
+			else:
+				artButtonList[num].hide()
+			num += 1
+	else:
+		filterArts()
+	
+	artDetail.text = ""
+	selectedArt = ""
+	artLearn.hide()
 	
 	for n in artData.size():
 		artButtonList[n].pressed = false
@@ -122,6 +181,14 @@ func filterArts():
 func schoolButtonPress(id):
 	schoolButtonID = id
 	filterArts()
+
+func schoolOptionPress(id):
+	print(str(schlFilterList.get_item_text(id)))
+	if(id == 0):
+		unfilterArts()
+	else:
+		schoolButtonID = id - 1
+		filterArts()
 
 func load_data():
 	
@@ -137,3 +204,25 @@ func load_data():
 	file.close()
 	
 	artData = data
+
+func getArts():
+	var learnedSkills = String(GlobalData.current_data.Art.Learned)
+	learnedArtList = learnedSkills.split(",")
+
+
+func _on_LearnArt_pressed():
+	if(artLearn.pressed == false):
+		artLearn.pressed = true
+		#learnedArtList.erase(selectedArt)
+		var i = learnedArtList.find(selectedArt)
+		learnedArtList.remove(i)
+		print("unlearned " + selectedArt)
+	elif(learnedArtList.size() > leanedArtLimit):
+		print("Max Number of Arts learned" + selectedArt)
+	else:
+		learnedArtList.append(selectedArt)
+		print("learned" + selectedArt)
+	#leanedArtNum -= learnedArtList.size()
+	
+	print("Number of Arts Known" + String(learnedArtList.size()))
+	
