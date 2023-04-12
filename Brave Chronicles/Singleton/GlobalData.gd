@@ -23,10 +23,10 @@ var default_data := {
 		{
 			"Abduration" : 0,
 			"Conjuration" : 0,
+			"Divination": 0,
 			"Enchantment" : 0,
 			"Evocation" : 0,
 			"Illusion" : 0,
-			"Mysticism": 0,
 			"Necromancy": 0,
 			"Restoration" : 0,
 			"Transmutation" : 0,
@@ -73,10 +73,10 @@ var default_data := {
 var schoolList = [
 	"Abduration",
 	"Conjuration",
+	"Divination",
 	"Enchantment",
 	"Evocation",
 	"Illusion",
-	"Mysticism",
 	"Necromancy",
 	"Restoration",
 	"Transmutation",

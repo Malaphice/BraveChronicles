@@ -4,17 +4,31 @@
 
 [node name="SchoolWindowDialog" type="WindowDialog"]
 visible = true
-margin_right = 682.0
-margin_bottom = 514.0
+margin_right = 600.0
+margin_bottom = 500.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-window_title = "Schools"
+window_title = "Compendium"
 resizable = true
 script = ExtResource( 1 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 656.0
-margin_bottom = 504.0
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 590.0
+margin_bottom = 490.0
+
+[node name="Arts" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Arts"]
+margin_right = 574.0
+margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 10
@@ -22,93 +36,108 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 646.0
-margin_bottom = 494.0
+margin_right = 564.0
+margin_bottom = 434.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 636.0
-margin_bottom = 38.0
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer"]
+margin_right = 554.0
+margin_bottom = 42.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 49.0
-margin_bottom = 38.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 58.0
+margin_bottom = 42.0
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 58.0
+margin_bottom = 14.0
+text = "Search"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 58.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 62.0
+margin_right = 111.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_right = 49.0
 margin_bottom = 14.0
 text = "Schools"
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 18.0
 margin_right = 49.0
 margin_bottom = 38.0
 
-[node name="Learned Arts" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 42.0
+[node name="Learned Arts" type="Button" parent="TabContainer/Arts/MarginContainer/VBoxContainer"]
+margin_top = 46.0
 margin_right = 93.0
-margin_bottom = 62.0
+margin_bottom = 66.0
 size_flags_horizontal = 0
 toggle_mode = true
 text = "Learned Arts"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 66.0
-margin_right = 636.0
-margin_bottom = 484.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer"]
+margin_top = 70.0
+margin_right = 554.0
+margin_bottom = 424.0
 size_flags_vertical = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_bottom = 418.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_bottom = 354.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 4.0
-margin_right = 148.0
-margin_bottom = 418.0
+margin_right = 160.0
+margin_bottom = 354.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 0.4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer"]
-margin_right = 144.0
-margin_bottom = 418.0
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer"]
+margin_right = 156.0
+margin_bottom = 354.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 0.4
 
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer/VBoxContainer"]
 visible = false
 margin_right = 144.0
 margin_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer"]
+[node name="Panel" type="Panel" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer"]
 visible = false
-margin_right = 144.0
-margin_bottom = 418.0
+margin_right = 156.0
+margin_bottom = 354.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.32
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 152.0
-margin_right = 636.0
-margin_bottom = 418.0
+[node name="ScrollContainer2" type="ScrollContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 164.0
+margin_right = 554.0
+margin_bottom = 354.0
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2"]
-margin_right = 484.0
-margin_bottom = 418.0
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2"]
+margin_right = 390.0
+margin_bottom = 354.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
 
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
+[node name="Panel" type="Panel" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
 visible = false
 margin_right = 484.0
 margin_bottom = 380.0
@@ -116,40 +145,40 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
-margin_right = 484.0
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
+margin_right = 390.0
 margin_bottom = 15.0
 fit_content_height = true
 scroll_following = true
 
-[node name="LearnArt" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
+[node name="LearnArt" type="Button" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
 margin_top = 19.0
-margin_right = 484.0
+margin_right = 390.0
 margin_bottom = 39.0
 toggle_mode = true
 text = "Lean Art"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
 margin_top = 43.0
-margin_right = 484.0
+margin_right = 390.0
 margin_bottom = 43.0
 
-[node name="Panel2" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2"]
+[node name="Panel2" type="Panel" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2"]
 visible = false
-margin_right = 484.0
-margin_bottom = 418.0
+margin_right = 390.0
+margin_bottom = 354.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2"]
 visible = false
 margin_left = 636.0
 margin_right = 636.0
 margin_bottom = 400.0
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
 visible = false
 margin_left = 318.0
 margin_right = 412.0
@@ -158,27 +187,63 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4/ScrollContainer"]
 margin_right = 94.0
 margin_bottom = 484.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
+[node name="ScrollContainer2" type="ScrollContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
 visible = false
 margin_left = 427.0
 margin_right = 636.0
 margin_bottom = 484.0
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4/ScrollContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer4/ScrollContainer2"]
 margin_right = 209.0
 margin_bottom = 484.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
 
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton" to="." method="schoolOptionPress"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Learned Arts" to="." method="filterLeanedArts"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/LearnArt" to="." method="_on_LearnArt_pressed"]
+[node name="Equipment" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Equipment"]
+margin_right = 574.0
+margin_bottom = 444.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Equipment/MarginContainer"]
+margin_right = 574.0
+margin_bottom = 444.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Equipment/MarginContainer/VBoxContainer"]
+margin_right = 574.0
+margin_bottom = 14.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Equipment/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="TabContainer/Equipment/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_bottom = 14.0
+
+[node name="Specialties" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[connection signal="item_selected" from="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton" to="." method="schoolOptionPress"]
+[connection signal="pressed" from="TabContainer/Arts/MarginContainer/VBoxContainer/Learned Arts" to="." method="filterLeanedArts"]
+[connection signal="pressed" from="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/LearnArt" to="." method="_on_LearnArt_pressed"]

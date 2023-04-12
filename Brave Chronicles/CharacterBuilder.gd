@@ -24,7 +24,7 @@ onready var revertButton = $"PanelContainer/Attributes/HBoxContainer3/Revert"
 
 onready var attributeNumList = [0,0,0,0,0,0,0,0]
 
-onready var schlLabelList = [
+onready var schlRankList = [
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Level",
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2/Magic School 2 Level",
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3/Magic School 3 Level",
@@ -43,6 +43,26 @@ onready var schlLabelList = [
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7/Physical School 7 Level",
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8/Physical School 8 Level",
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Level"]
+
+onready var schlLabelList = [
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 2/Magic School 2 Level",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3/Magic School 3 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4/Magic School 4 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5/Magic School 5 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6/Magic School 6 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7/Magic School 7 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 8/Magic School 8 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 9/Magic School 9 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 1/Physical School 1 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 2/Physical School 2 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 3/Physical School 3 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 4/Physical School 4 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 5/Physical School 5 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 6/Physical School 6 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 7/Physical School 7 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8/Physical School 8 Label",
+	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Label"]
 
 var playerName
 var lvNum
@@ -64,6 +84,25 @@ func _ready():
 	$MainMenuButton.get_popup().add_item("Save Character")
 	$MainMenuButton.get_popup().add_item("Quit")
 	$MainMenuButton.get_popup().connect("id_pressed", self, "_on_MainMenuButton_pressed")
+	
+	schlLabelList[0].text = "Abduration"
+	schlLabelList[1].text = "Conjuration"
+	schlLabelList[2].text = "Divination"
+	schlLabelList[3].text = "Enchantment"
+	schlLabelList[4].text = "Evocation"
+	schlLabelList[5].text = "Illusion"
+	schlLabelList[6].text = "Necromancy"
+	schlLabelList[7].text = "Restoration"
+	schlLabelList[8].text = "Transmutation"
+	schlLabelList[9].text = "Alchemy"
+	schlLabelList[10].text = "Armours"
+	schlLabelList[11].text = "Artillery"
+	schlLabelList[12].text = "Machinery"
+	schlLabelList[13].text = "Medics"
+	schlLabelList[14].text = "MeleeArms"
+	schlLabelList[15].text = "RangedArms"
+	schlLabelList[16].text = "Stealth"
+	schlLabelList[17].text = "Unarmed"
 	
 	#$SchoolWindowDialog.popup()
 	#$FileDialog.popup()
@@ -156,10 +195,10 @@ func UpdateCharacterDetails():
 	
 	schoolRanks[0] = GlobalData.current_data.School.Abduration
 	schoolRanks[1] = GlobalData.current_data.School.Conjuration
-	schoolRanks[2] = GlobalData.current_data.School.Enchantment
-	schoolRanks[3] = GlobalData.current_data.School.Evocation
-	schoolRanks[4] = GlobalData.current_data.School.Illusion
-	schoolRanks[5] = GlobalData.current_data.School.Mysticism
+	schoolRanks[2] = GlobalData.current_data.School.Divination
+	schoolRanks[3] = GlobalData.current_data.School.Enchantment
+	schoolRanks[4] = GlobalData.current_data.School.Evocation
+	schoolRanks[5] = GlobalData.current_data.School.Illusion
 	schoolRanks[6] = GlobalData.current_data.School.Necromancy
 	schoolRanks[7] = GlobalData.current_data.School.Restoration
 	schoolRanks[8] = GlobalData.current_data.School.Transmutation
@@ -192,26 +231,26 @@ func UpdateCharacterDetails():
 	attributeLabel.text = String(AttributeNum)
 	confirmButton.disabled = true
 	
-#	for n in schlLabelList:
-#		schlLabelList[n].text = String(schoolRanks[n])
-	schlLabelList[0].text = String(schoolRanks[0])
-	schlLabelList[1].text = String(schoolRanks[1])
-	schlLabelList[2].text = String(schoolRanks[2])
-	schlLabelList[3].text = String(schoolRanks[3])
-	schlLabelList[4].text = String(schoolRanks[4])
-	schlLabelList[5].text = String(schoolRanks[5])
-	schlLabelList[6].text = String(schoolRanks[6])
-	schlLabelList[7].text = String(schoolRanks[7])
-	schlLabelList[8].text = String(schoolRanks[8])
-	schlLabelList[9].text = String(schoolRanks[9])
-	schlLabelList[10].text = String(schoolRanks[10])
-	schlLabelList[11].text = String(schoolRanks[11])
-	schlLabelList[12].text = String(schoolRanks[12])
-	schlLabelList[13].text = String(schoolRanks[13])
-	schlLabelList[14].text = String(schoolRanks[14])
-	schlLabelList[15].text = String(schoolRanks[15])
-	schlLabelList[16].text = String(schoolRanks[16])
-	schlLabelList[17].text = String(schoolRanks[17])
+#	for n in schlRankList:
+#		schlRankList[n].text = String(schoolRanks[n])
+	schlRankList[0].text = String(schoolRanks[0])
+	schlRankList[1].text = String(schoolRanks[1])
+	schlRankList[2].text = String(schoolRanks[2])
+	schlRankList[3].text = String(schoolRanks[3])
+	schlRankList[4].text = String(schoolRanks[4])
+	schlRankList[5].text = String(schoolRanks[5])
+	schlRankList[6].text = String(schoolRanks[6])
+	schlRankList[7].text = String(schoolRanks[7])
+	schlRankList[8].text = String(schoolRanks[8])
+	schlRankList[9].text = String(schoolRanks[9])
+	schlRankList[10].text = String(schoolRanks[10])
+	schlRankList[11].text = String(schoolRanks[11])
+	schlRankList[12].text = String(schoolRanks[12])
+	schlRankList[13].text = String(schoolRanks[13])
+	schlRankList[14].text = String(schoolRanks[14])
+	schlRankList[15].text = String(schoolRanks[15])
+	schlRankList[16].text = String(schoolRanks[16])
+	schlRankList[17].text = String(schoolRanks[17])
 	
 
 func _on_MainMenuButton_pressed(id):
@@ -318,13 +357,13 @@ func onSchoolButtonPressPlus(plus, id):
 			tempSchoolRanks[id] += 1
 			schoolPoints -= 1
 			schoolLabel.text = String(schoolPoints)
-			schlLabelList[id].text = String(schoolRanks[id])
+			schlRankList[id].text = String(schoolRanks[id])
 			confirmButton.disabled = false
 			revertButton.disabled = false
 	else:
 		if(tempSchoolRanks[id] > 0):
 			schoolRanks[id] -= 1
-			schlLabelList[id].text = String(schoolRanks[id])
+			schlRankList[id].text = String(schoolRanks[id])
 			tempSchoolRanks[id] -= 1
 			schoolPoints += 1
 			schoolLabel.text = String(schoolPoints)

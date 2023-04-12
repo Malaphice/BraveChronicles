@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://CharacterBuilder.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://player-icon.jpg" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -498,27 +500,30 @@ margin_right = 161.0
 margin_bottom = 86.0
 
 [node name="Magic School 3 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_right = 96.0
+margin_right = 77.0
 margin_bottom = 20.0
-text = "Enchantment"
+disabled = true
+text = "Divination"
 
 [node name="Magic School 3 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_left = 100.0
+margin_left = 81.0
 margin_top = 3.0
-margin_right = 108.0
+margin_right = 89.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Magic School 3 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_left = 112.0
-margin_right = 129.0
+margin_left = 93.0
+margin_right = 110.0
 margin_bottom = 20.0
+disabled = true
 text = "-"
 
 [node name="Magic School 3 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 3"]
-margin_left = 133.0
-margin_right = 153.0
+margin_left = 114.0
+margin_right = 134.0
 margin_bottom = 20.0
+disabled = true
 text = "+"
 
 [node name="Magic School 4" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
@@ -527,26 +532,26 @@ margin_right = 161.0
 margin_bottom = 110.0
 
 [node name="Magic School 4 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_right = 73.0
+margin_right = 96.0
 margin_bottom = 20.0
-text = "Evocation"
+text = "Enchantment"
 
 [node name="Magic School 4 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_left = 77.0
+margin_left = 100.0
 margin_top = 3.0
-margin_right = 85.0
+margin_right = 108.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Magic School 4 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_left = 89.0
-margin_right = 106.0
+margin_left = 112.0
+margin_right = 129.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Magic School 4 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 4"]
-margin_left = 110.0
-margin_right = 130.0
+margin_left = 133.0
+margin_right = 153.0
 margin_bottom = 20.0
 text = "+"
 
@@ -556,26 +561,26 @@ margin_right = 161.0
 margin_bottom = 134.0
 
 [node name="Magic School 5 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_right = 55.0
+margin_right = 73.0
 margin_bottom = 20.0
-text = "llusion"
+text = "Evocation"
 
 [node name="Magic School 5 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_left = 59.0
+margin_left = 77.0
 margin_top = 3.0
-margin_right = 67.0
+margin_right = 85.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Magic School 5 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_left = 71.0
-margin_right = 88.0
+margin_left = 89.0
+margin_right = 106.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Magic School 5 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 5"]
-margin_left = 92.0
-margin_right = 112.0
+margin_left = 110.0
+margin_right = 130.0
 margin_bottom = 20.0
 text = "+"
 
@@ -585,26 +590,26 @@ margin_right = 161.0
 margin_bottom = 158.0
 
 [node name="Magic School 6 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_right = 78.0
+margin_right = 55.0
 margin_bottom = 20.0
-text = "Mysticism"
+text = "llusion"
 
 [node name="Magic School 6 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_left = 82.0
+margin_left = 59.0
 margin_top = 3.0
-margin_right = 90.0
+margin_right = 67.0
 margin_bottom = 17.0
 text = "0"
 
 [node name="Magic School 6 Button" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_left = 94.0
-margin_right = 111.0
+margin_left = 71.0
+margin_right = 88.0
 margin_bottom = 20.0
 text = "-"
 
 [node name="Magic School 6 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 6"]
-margin_left = 115.0
-margin_right = 135.0
+margin_left = 92.0
+margin_right = 112.0
 margin_bottom = 20.0
 text = "+"
 
@@ -616,6 +621,7 @@ margin_bottom = 182.0
 [node name="Magic School 7 Label" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
 margin_right = 92.0
 margin_bottom = 20.0
+disabled = true
 text = "Necromancy"
 
 [node name="Magic School 7 Level" type="Label" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
@@ -629,12 +635,14 @@ text = "0"
 margin_left = 108.0
 margin_right = 125.0
 margin_bottom = 20.0
+disabled = true
 text = "-"
 
 [node name="Magic School 7 Button2" type="Button" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 7"]
 margin_left = 129.0
 margin_right = 149.0
 margin_bottom = 20.0
+disabled = true
 text = "+"
 
 [node name="Magic School 8" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Schools/VBoxContainer"]
@@ -966,12 +974,6 @@ margin_right = 128.0
 margin_bottom = 20.0
 text = "+"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer2/AbilityTab/Schools"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -24.0
-
 [node name="Combat Arts" type="Tabs" parent="PanelContainer2/AbilityTab"]
 visible = false
 margin_right = 40.0
@@ -982,109 +984,110 @@ visible = false
 margin_right = 40.0
 margin_bottom = 24.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Equipment"]
-margin_left = 8.0
-margin_top = 38.0
-margin_right = 72.0
-margin_bottom = 331.0
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Equipment"]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="Hand1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
-margin_right = 64.0
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer"]
+margin_right = 44.0
+margin_bottom = 140.0
+
+[node name="Hand1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
+margin_right = 44.0
 margin_bottom = 14.0
 text = "L Hand"
 
-[node name="Hand2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
+[node name="Hand2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
 margin_top = 18.0
-margin_right = 64.0
+margin_right = 44.0
 margin_bottom = 32.0
 text = "R hand"
 
-[node name="Head" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
+[node name="Head" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
 margin_top = 36.0
-margin_right = 64.0
+margin_right = 44.0
 margin_bottom = 50.0
 text = "Head"
 
-[node name="Body" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
+[node name="Body" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
 margin_top = 54.0
-margin_right = 64.0
+margin_right = 44.0
 margin_bottom = 68.0
 text = "Body"
 
-[node name="Arms" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
+[node name="Arms" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
 margin_top = 72.0
-margin_right = 64.0
+margin_right = 44.0
 margin_bottom = 86.0
 text = "Arms"
 
-[node name="Legs" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
+[node name="Legs" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
 margin_top = 90.0
-margin_right = 64.0
+margin_right = 44.0
 margin_bottom = 104.0
 text = "Legs"
 
-[node name="Acc1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
+[node name="Acc1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
 margin_top = 108.0
-margin_right = 64.0
+margin_right = 44.0
 margin_bottom = 122.0
 text = "Acc 1"
 
-[node name="Acc2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer"]
+[node name="Acc2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer"]
 margin_top = 126.0
-margin_right = 64.0
+margin_right = 44.0
 margin_bottom = 140.0
 text = "Acc 2"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Equipment"]
-margin_left = 59.0
-margin_top = 38.0
-margin_right = 127.0
-margin_bottom = 331.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer"]
+margin_left = 48.0
+margin_right = 92.0
+margin_bottom = 140.0
 
-[node name="Hand1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
-margin_right = 68.0
+[node name="Hand1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
+margin_right = 44.0
 margin_bottom = 14.0
 text = "L Hand"
 
-[node name="Hand2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
+[node name="Hand2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
 margin_top = 18.0
-margin_right = 68.0
+margin_right = 44.0
 margin_bottom = 32.0
 text = "R hand"
 
-[node name="Head" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
+[node name="Head" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
 margin_top = 36.0
-margin_right = 68.0
+margin_right = 44.0
 margin_bottom = 50.0
 text = "Head"
 
-[node name="Body" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
+[node name="Body" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
 margin_top = 54.0
-margin_right = 68.0
+margin_right = 44.0
 margin_bottom = 68.0
 text = "Body"
 
-[node name="Arms" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
+[node name="Arms" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
 margin_top = 72.0
-margin_right = 68.0
+margin_right = 44.0
 margin_bottom = 86.0
 text = "Arms"
 
-[node name="Legs" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
+[node name="Legs" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
 margin_top = 90.0
-margin_right = 68.0
+margin_right = 44.0
 margin_bottom = 104.0
 text = "Legs"
 
-[node name="Acc1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
+[node name="Acc1" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
 margin_top = 108.0
-margin_right = 68.0
+margin_right = 44.0
 margin_bottom = 122.0
 text = "Acc 1"
 
-[node name="Acc2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/VBoxContainer2"]
+[node name="Acc2" type="Label" parent="PanelContainer2/AbilityTab/Equipment/HBoxContainer/VBoxContainer2"]
 margin_top = 126.0
-margin_right = 68.0
+margin_right = 44.0
 margin_bottom = 140.0
 text = "Acc 2"
 
@@ -1093,19 +1096,52 @@ visible = false
 margin_right = 40.0
 margin_bottom = 24.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Inventory"]
+margin_right = 794.0
+margin_bottom = 297.0
+
+[node name="Button" type="Button" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer"]
+margin_right = 72.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Add Item"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer"]
+margin_left = 76.0
+margin_right = 433.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer/ScrollContainer"]
+margin_right = 357.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer"]
+margin_left = 437.0
+margin_right = 794.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer/ScrollContainer2"]
+margin_right = 357.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="Skill Actions" type="Tabs" parent="PanelContainer2/AbilityTab"]
 visible = false
 margin_right = 40.0
 margin_bottom = 24.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions"]
-margin_left = 4.0
-margin_top = 32.0
-margin_right = 92.0
-margin_bottom = 225.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 20.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer"]
@@ -1135,7 +1171,7 @@ text = "+"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
 margin_top = 24.0
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 44.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer2"]
@@ -1165,7 +1201,7 @@ text = "+"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
 margin_top = 48.0
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 68.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer3"]
@@ -1195,7 +1231,7 @@ text = "+"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
 margin_top = 72.0
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 92.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer4"]
@@ -1225,7 +1261,7 @@ text = "+"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
 margin_top = 96.0
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 116.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer5"]
@@ -1255,7 +1291,7 @@ text = "+"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
 margin_top = 120.0
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 140.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer6"]
@@ -1285,7 +1321,7 @@ text = "+"
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
 margin_top = 144.0
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 164.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer7"]
@@ -1315,7 +1351,7 @@ text = "+"
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer"]
 margin_top = 168.0
-margin_right = 88.0
+margin_right = 83.0
 margin_bottom = 188.0
 
 [node name="Skill" type="Label" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer/HBoxContainer8"]
@@ -1345,9 +1381,7 @@ text = "+"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions"]
 margin_left = 121.0
-margin_top = 32.0
 margin_right = 214.0
-margin_bottom = 225.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Skill Actions/VBoxContainer2"]
 margin_right = 93.0
@@ -1592,6 +1626,56 @@ text = "+"
 visible = false
 margin_right = 40.0
 margin_bottom = 24.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/AbilityTab/About"]
+margin_right = 800.0
+margin_bottom = 274.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/About/HBoxContainer"]
+margin_right = 517.0
+margin_bottom = 274.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.65
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer2/AbilityTab/About/HBoxContainer/VBoxContainer"]
+margin_right = 517.0
+margin_bottom = 274.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="TextEdit" type="TextEdit" parent="PanelContainer2/AbilityTab/About/HBoxContainer/VBoxContainer/ScrollContainer"]
+margin_right = 517.0
+margin_bottom = 274.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureButton" parent="PanelContainer2/AbilityTab/About/HBoxContainer"]
+margin_left = 521.0
+margin_right = 800.0
+margin_bottom = 274.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 3
+
+[node name="Panel" type="Panel" parent="PanelContainer2/AbilityTab/About/HBoxContainer"]
+visible = false
+margin_left = 521.0
+margin_right = 800.0
+margin_bottom = 274.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+
+[node name="Sprite" type="Sprite" parent="PanelContainer2/AbilityTab/About/HBoxContainer/Panel"]
+position = Vector2( 140, 135 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
 
 [node name="Panel3" type="Panel" parent="."]
 visible = false

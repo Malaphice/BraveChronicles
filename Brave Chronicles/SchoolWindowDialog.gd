@@ -1,11 +1,11 @@
 extends WindowDialog
 
-onready var artList = $"MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer/VBoxContainer"
-onready var artDetail = $"MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/RichTextLabel"
-onready var artLearn = $"MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/LearnArt"
+onready var artList = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer/VBoxContainer"
+onready var artDetail = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/RichTextLabel"
+onready var artLearn = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/LearnArt"
 
-onready var schlFilterList = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton"
-onready var artLearnedButton = $"MarginContainer/VBoxContainer/Learned Arts"
+onready var schlFilterList = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton"
+onready var artLearnedButton = $"TabContainer/Arts/MarginContainer/VBoxContainer/Learned Arts"
 
 var artButtonList = []
 
@@ -58,6 +58,7 @@ func _ready():
 		artButtonList[num].connect("button_down", self, "_on_artButton_Pressed", [num, art])
 		artList.add_child(artButtonList[num])
 		num += 1
+	filterArts()
 
 
 func _on_artButton_Pressed(num, art):
