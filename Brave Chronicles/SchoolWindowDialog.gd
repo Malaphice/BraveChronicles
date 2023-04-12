@@ -4,22 +4,31 @@ onready var artList = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxCont
 onready var artDetail = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/RichTextLabel"
 onready var artLearn = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/LearnArt"
 
-onready var schlFilterList = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/OptionButton"
-onready var artLearnedButton = $"TabContainer/Arts/MarginContainer/VBoxContainer/Learned Arts"
+onready var schlFilterList = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/OptionButton"
+onready var artLearnedButton = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/Learned Arts"
 
 var artButtonList = []
+var artNameList = []
+
+var equipButtonList = []
 
 var schoolButtonID;
 
 var artData
+var equipData
 var selectedArt
 
 var artsFilePath = "res://CombatArtsSample.json"
+var equipFilePath = "res://BraveChronicles_Weapons.json"
 var playerFilePath = "user://player_data.json"
 var learnedArtList = []
 var leanedArtLimit
 
+var equipIcon = "res://icon.png"
 
+### Equipment Variables
+onready var searchBar = $"TabContainer/Equipment/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/LineEdit"
+onready var equipBox = $"TabContainer/Equipment/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,10 +48,8 @@ func _ready():
 	
 	num = 0
 	
-	#schlToggleButton[0].pressed = true;
 	leanedArtLimit = GlobalData.current_data.Art.LearnLimit
 	var button1 = Button.new()
-	#button1.connect("button_down", self, _on_artButton_Pressed())
 	
 	load_data()
 	getArts()
@@ -54,11 +61,14 @@ func _ready():
 	for art in artData:
 		artButtonList.append(Button.new())
 		artButtonList[num].text = art.Name
+		artNameList.append(art.Name)
 		artButtonList[num].toggle_mode = true
 		artButtonList[num].connect("button_down", self, "_on_artButton_Pressed", [num, art])
 		artList.add_child(artButtonList[num])
 		num += 1
 	filterArts()
+	
+	loadEquipment()
 
 
 func _on_artButton_Pressed(num, art):
@@ -86,26 +96,10 @@ func filterArts():
 			artButtonList[num].show()
 		num += 1
 	
-	artDetail.text = ""
-	selectedArt = ""
-	artLearn.hide()
-	
-	for n in artData.size():
-		artButtonList[n].pressed = false
-
-func filterLeanedArts():
-	var num = 0
 	if(artLearnedButton.pressed == true):
-		for art in artData:
-			if(learnedArtList.find(artButtonList[num].text) == -1):
-				artButtonList[num].hide()
-			elif (art.school == GlobalData.schoolList[num]):
-				artButtonList[num].show()
-			else:
-				artButtonList[num].hide()
-			num += 1
-	else:
-		filterArts()
+		for n in artButtonList.size():
+			if(learnedArtList.find(artButtonList[n].text) == -1):
+				artButtonList[n].hide()
 	
 	artDetail.text = ""
 	selectedArt = ""
@@ -133,6 +127,14 @@ func load_data():
 	file.close()
 	
 	artData = data
+	
+	file.open(equipFilePath, File.READ)
+	
+	data = parse_json(file.get_as_text())
+	
+	file.close()
+	
+	equipData = data
 
 func getArts():
 	var learnedSkills = String(GlobalData.current_data.Art.Learned)
@@ -140,16 +142,38 @@ func getArts():
 
 
 func _on_LearnArt_pressed():
+	var i = 0
 	if(artLearn.pressed == false):
 		artLearn.pressed = true
-		var i = learnedArtList.find(selectedArt)
+		i = learnedArtList.find(selectedArt)
 		learnedArtList.remove(i)
+		i = artNameList.find(selectedArt)
+		artButtonList[i].icon = null
 		print("unlearned " + selectedArt)
 	elif(learnedArtList.size() > leanedArtLimit):
 		print("Max Number of Arts learned" + selectedArt)
 	else:
 		learnedArtList.append(selectedArt)
+		i = artNameList.find(selectedArt)
+		artButtonList[i].icon = ResourceLoader.load(equipIcon)
+		artButtonList[i].color
+		artLearn.pressed = false
 		print("learned" + selectedArt)
 	
 	print("Number of Arts Known" + String(learnedArtList.size()))
-	
+
+func loadEquipment():
+	var num = 0
+	for item in equipData:
+		equipButtonList.append(Button.new())
+		equipButtonList[num].text = item.Name
+		equipButtonList[num].toggle_mode = true
+		#equipButtonList[num].connect("button_down", self, "_on_artButton_Pressed", [num, item])
+		equipBox.add_child(equipButtonList[num])
+		num += 1
+	#equipBox
+	pass
+
+
+func _on_TabContainer_tab_selected(tab):
+	pass # Replace with function body.
