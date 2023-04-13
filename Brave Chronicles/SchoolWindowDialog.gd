@@ -29,6 +29,8 @@ var equipIcon = "res://icon.png"
 ### Equipment Variables
 onready var searchBar = $"TabContainer/Equipment/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/LineEdit"
 onready var equipBox = $"TabContainer/Equipment/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer"
+var addEquipButtonList = []
+var descriptionEquipList = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -116,6 +118,21 @@ func schoolOptionPress(id):
 		schoolButtonID = id - 1
 		filterArts()
 
+func _on_itemButton_Pressed(num, item):
+	for n in equipData.size():
+		if (equipButtonList[n].text != item.Name):
+			#equipButtonList[n].pressed = false
+			addEquipButtonList[n].hide()
+			descriptionEquipList[n].hide()
+		else:
+			if(equipButtonList[n].pressed == false):
+				addEquipButtonList[n].show()
+				descriptionEquipList[n].show()
+				print(descriptionEquipList[n].text)
+			else:
+				addEquipButtonList[n].hide()
+				descriptionEquipList[n].hide()
+
 func load_data():
 	
 	var file = File.new()
@@ -164,12 +181,35 @@ func _on_LearnArt_pressed():
 
 func loadEquipment():
 	var num = 0
+#	var textLabel: RichTextLabel = RichTextLabel.new()
+#	textLabel.rect_size = Vector2(400,400)
+#	textLabel.rect_min_size = Vector2(400,400)
+#	textLabel.SIZE_SHRINK_CENTER
+#	textLabel.SIZE_EXPAND_FILL
+#	textLabel.text = "X"
+#	var textLabel1: Label = Label.new()
+#	textLabel1.text = "X"
+	#add_child(textLabel)
 	for item in equipData:
 		equipButtonList.append(Button.new())
 		equipButtonList[num].text = item.Name
 		equipButtonList[num].toggle_mode = true
-		#equipButtonList[num].connect("button_down", self, "_on_artButton_Pressed", [num, item])
+		equipButtonList[num].connect("button_down", self, "_on_itemButton_Pressed", [num, item])
+		#equipBox.add_child(equipButtonList[num])
+		descriptionEquipList.append(RichTextLabel.new())
+		#descriptionEquipList.append(Label.new())
+		#var x = Button.new()
+		descriptionEquipList[num].rect_min_size = Vector2(400,100)
+		#descriptionEquipList[num].SIZE_EXPAND_FILL
+		#descriptionEquipList[num].SIZE_FILL
+		descriptionEquipList[num].text = "Item Content"
+		descriptionEquipList[num].hide()
+		addEquipButtonList.append(Button.new())
+		addEquipButtonList[num].text = "Add Item to Inventory"
+		addEquipButtonList[num].hide()
 		equipBox.add_child(equipButtonList[num])
+		equipBox.add_child(descriptionEquipList[num])
+		equipBox.add_child(addEquipButtonList[num])
 		num += 1
 	#equipBox
 	pass
