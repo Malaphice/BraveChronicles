@@ -413,6 +413,7 @@ margin_bottom = 321.0
 tab_align = 0
 
 [node name="Schools" type="Tabs" parent="PanelContainer2/AbilityTab"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -975,9 +976,30 @@ margin_bottom = 20.0
 text = "+"
 
 [node name="Combat Arts" type="Tabs" parent="PanelContainer2/AbilityTab"]
-visible = false
 margin_right = 40.0
 margin_bottom = 24.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Combat Arts"]
+margin_right = 244.0
+margin_bottom = 280.0
+
+[node name="Label" type="Label" parent="PanelContainer2/AbilityTab/Combat Arts/VBoxContainer"]
+margin_right = 244.0
+margin_bottom = 14.0
+text = "Equipped Arts"
+
+[node name="Label" type="Label" parent="PanelContainer2/AbilityTab/Combat Arts"]
+margin_left = 303.0
+margin_right = 392.0
+margin_bottom = 14.0
+text = "learned Arts"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer2/AbilityTab/Combat Arts"]
+margin_left = 303.0
+margin_right = 816.0
+margin_bottom = 315.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Combat Arts/ScrollContainer"]
 
 [node name="Equipment" type="Tabs" parent="PanelContainer2/AbilityTab"]
 visible = false
@@ -1938,6 +1960,7 @@ margin_bottom = 591.0
 [connection signal="pressed" from="PanelContainer/Attributes/Technique/Technique Value/Tch Plus Button" to="." method="onAttributeButtonPressPlus" binds= [ true, 7 ]]
 [connection signal="pressed" from="PanelContainer/Attributes/HBoxContainer3/Confirm" to="." method="_on_Confirm_pressed"]
 [connection signal="pressed" from="PanelContainer/Attributes/HBoxContainer3/Revert" to="." method="_on_Revert_pressed"]
+[connection signal="tab_selected" from="PanelContainer2/AbilityTab" to="." method="_on_AbilityTab_tab_selected"]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Label" to="." method="MagicSchoolButtonPressed" binds= [ 0 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 0 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer/Magic School 1/Magic School 1 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 0 ]]

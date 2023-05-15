@@ -45,7 +45,7 @@ var default_data := {
 	"Art":
 		{
 			"Equipped": "",
-			"Learned": "",
+			"Learned": ["Test 1", "Test 2", "Test 3", "Test 4"],
 			"EquipLimit": 2,
 			"LearnLimit" : 2
 		},

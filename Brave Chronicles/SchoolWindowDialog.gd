@@ -51,7 +51,7 @@ func _ready():
 	num = 0
 	
 	leanedArtLimit = GlobalData.current_data.Art.LearnLimit
-	var button1 = Button.new()
+	#var button1 = Button.new()
 	
 	load_data()
 	getArts()
@@ -155,29 +155,39 @@ func load_data():
 
 func getArts():
 	var learnedSkills = String(GlobalData.current_data.Art.Learned)
-	learnedArtList = learnedSkills.split(",")
+	#learnedArtList = learnedSkills.split(",")
+	learnedArtList = GlobalData.current_data.Art.Learned
+	#print(learnedArtList[1])
 
 
 func _on_LearnArt_pressed():
 	var i = 0
 	if(artLearn.pressed == false):
-		artLearn.pressed = true
+		#artLearn.pressed = true
 		i = learnedArtList.find(selectedArt)
 		learnedArtList.remove(i)
 		i = artNameList.find(selectedArt)
-		artButtonList[i].icon = null
+		#artButtonList[i].icon = null
+		#artButtonList[i].Color.font_outline_color = Color(1, 0, 1, 0)
+		updateArtData()
 		print("unlearned " + selectedArt)
 	elif(learnedArtList.size() > leanedArtLimit):
 		print("Max Number of Arts learned" + selectedArt)
 	else:
 		learnedArtList.append(selectedArt)
 		i = artNameList.find(selectedArt)
-		artButtonList[i].icon = ResourceLoader.load(equipIcon)
-		artButtonList[i].color
-		artLearn.pressed = false
+		#artButtonList[i].icon = ResourceLoader.load(equipIcon)
+		#artButtonList[i].Color.font_outline_color = Color(1, 1, 1, 1)
+		#artLearn.pressed = false
+		updateArtData()
 		print("learned" + selectedArt)
 	
 	print("Number of Arts Known" + String(learnedArtList.size()))
+
+func updateArtData():
+	GlobalData.current_data.Art.Learned = learnedArtList
+	#for a in learnedArtList:
+		
 
 func loadEquipment():
 	var num = 0
