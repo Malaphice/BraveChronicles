@@ -7,30 +7,35 @@ onready var artLearn = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxCon
 onready var schlFilterList = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/OptionButton"
 onready var artLearnedButton = $"TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/Learned Arts"
 
+onready var windowTab = $"TabContainer"
+
 var artButtonList = []
 var artNameList = []
-
-var equipButtonList = []
 
 var schoolButtonID;
 
 var artData
-var equipData
 var selectedArt
 
 var artsFilePath = "res://CombatArtsSample.json"
-var equipFilePath = "res://BraveChronicles_Weapons.json"
 var playerFilePath = "user://player_data.json"
 var learnedArtList = []
 var leanedArtLimit
 
-var equipIcon = "res://icon.png"
 
 ### Equipment Variables
 onready var searchBar = $"TabContainer/Equipment/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/LineEdit"
 onready var equipBox = $"TabContainer/Equipment/MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer"
+onready var itemSortByList = $"TabContainer/Equipment/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2/OptionButton"
+onready var itemTypeList = $"TabContainer/Equipment/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer3/OptionButton"
 var addEquipButtonList = []
 var descriptionEquipList = []
+var equipIcon = "res://icon.png"
+var equipFilePath = "res://BraveChronicles_Weapons.json"
+var equipData
+var equipButtonList = []
+var equipTypeList = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,7 +59,7 @@ func _ready():
 	#var button1 = Button.new()
 	
 	load_data()
-	getArts()
+	#getArts()
 	artLearn.hide()
 	print(artData.size())
 	
@@ -68,9 +73,20 @@ func _ready():
 		artButtonList[num].connect("button_down", self, "_on_artButton_Pressed", [num, art])
 		artList.add_child(artButtonList[num])
 		num += 1
-	filterArts()
+	
+	num = 0
+	
+	if (GlobalData.abilityTabSelectedSchl > -1 && GlobalData.abilityTabSelectedSchl < 18):
+		filterArts()
+	
+	if (GlobalData.abilityTabSelectedSchl == 18):
+		windowTab.current_tab = 1
 	
 	loadEquipment()
+	#itemTypeList
+	for itemType in equipTypeList:
+		itemTypeList.add_item(itemType, num)
+		num += 1
 
 
 func _on_artButton_Pressed(num, art):
@@ -118,21 +134,6 @@ func schoolOptionPress(id):
 		schoolButtonID = id - 1
 		filterArts()
 
-func _on_itemButton_Pressed(num, item):
-	for n in equipData.size():
-		if (equipButtonList[n].text != item.Name):
-			#equipButtonList[n].pressed = false
-			addEquipButtonList[n].hide()
-			descriptionEquipList[n].hide()
-		else:
-			if(equipButtonList[n].pressed == false):
-				addEquipButtonList[n].show()
-				descriptionEquipList[n].show()
-				print(descriptionEquipList[n].text)
-			else:
-				addEquipButtonList[n].hide()
-				descriptionEquipList[n].hide()
-
 func load_data():
 	
 	var file = File.new()
@@ -156,7 +157,7 @@ func load_data():
 func getArts():
 	var learnedSkills = String(GlobalData.current_data.Art.Learned)
 	#learnedArtList = learnedSkills.split(",")
-	learnedArtList = GlobalData.current_data.Art.Learned
+	#learnedArtList = GlobalData.current_data.Art.Learned
 	#print(learnedArtList[1])
 
 
@@ -200,6 +201,7 @@ func loadEquipment():
 #	var textLabel1: Label = Label.new()
 #	textLabel1.text = "X"
 	#add_child(textLabel)
+	equipTypeList.append("All Types")
 	for item in equipData:
 		equipButtonList.append(Button.new())
 		equipButtonList[num].text = item.Name
@@ -216,14 +218,51 @@ func loadEquipment():
 		descriptionEquipList[num].hide()
 		addEquipButtonList.append(Button.new())
 		addEquipButtonList[num].text = "Add Item to Inventory"
+		addEquipButtonList[num].connect("button_down", self, "addToInventory", [item])
 		addEquipButtonList[num].hide()
 		equipBox.add_child(equipButtonList[num])
 		equipBox.add_child(descriptionEquipList[num])
 		equipBox.add_child(addEquipButtonList[num])
+		
+		if(!equipTypeList.has(String(item.Type))):
+			equipTypeList.append(String(item.Type))
+		
 		num += 1
 	#equipBox
 	pass
 
+func _on_itemButton_Pressed(num, item):
+	for n in equipData.size():
+		if (equipButtonList[n].text != item.Name):
+			equipButtonList[n].pressed = false
+			addEquipButtonList[n].hide()
+			descriptionEquipList[n].hide()
+		else:
+			if(equipButtonList[n].pressed == false):
+				addEquipButtonList[n].show()
+				descriptionEquipList[n].show()
+				print(descriptionEquipList[n].text)
+			else:
+				#equipButtonList[n].pressed = false
+				addEquipButtonList[n].hide()
+				descriptionEquipList[n].hide()
+
+func addToInventory(item):
+	GlobalData.current_data.Item.Inventory.append(item.Name)
+#	get_node("../../SomeNode/SomeOtherNode")
+#	get_parent().get_parent().get_node("SomeNode")
+#	get_tree().get_root().get_node("SomeNode/SomeOtherNode")
+	#print(get_tree().get_root().get_node("Control/PanelContainer2/AbilityTab/Inventory/HBoxContainer/ScrollContainer/VBoxContainer"))
+	var itemBar = HBoxContainer.new()
+	var itemButton = Button.new()
+	var itemCount = Label.new()
+	itemButton.text = item.Name
+	itemCount.text = "x1"
+	itemBar.add_child(itemButton)
+	itemBar.add_child(itemCount)
+	#CBInventoryList.add_child(itemBar);
+	get_tree().get_root().get_node("Control/PanelContainer2/AbilityTab/Inventory/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer").add_child(itemBar);
+	print(GlobalData.current_data.Item.Inventory)
 
 func _on_TabContainer_tab_selected(tab):
 	pass # Replace with function body.

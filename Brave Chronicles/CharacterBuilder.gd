@@ -64,7 +64,11 @@ onready var schlLabelList = [
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 8/Physical School 8 Label",
 	$"PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Label"]
 
+onready var abilityTab = $"PanelContainer2/AbilityTab"
+onready var inventoryTab = $"PanelContainer2/AbilityTab/Inventory"
 onready var learnedArtsBox = $"PanelContainer2/AbilityTab/Combat Arts/ScrollContainer/VBoxContainer2"
+onready var inventoryBox = $"PanelContainer2/AbilityTab/Inventory/HBoxContainer/ScrollContainer/VBoxContainer"
+
 var artButtonList = []
 
 var playerName
@@ -396,7 +400,6 @@ func MagicSchoolButtonPressed(id):
 	dialog.popup()
 	#pass # Replace with function body.
 
-
 func _on_AbilityTab_tab_selected(tab):
 	print(tab)
 	var num = 0
@@ -408,3 +411,17 @@ func _on_AbilityTab_tab_selected(tab):
 			learnedArtsBox[num].name = artList[num]
 			artButtonList[num].toggle_mode = true
 			num += 1
+
+
+func _on_AddItem_pressed():
+	GlobalData.abilityTabSelectedSchl = 18
+	var dialog = SchoolWindow.instance()
+	add_child(dialog)
+	dialog.popup()
+
+func PopulateArtsList():
+	#learnedArtsBox
+	pass
+	
+func PopulateEquipmentList():
+	pass

@@ -976,6 +976,7 @@ margin_bottom = 20.0
 text = "+"
 
 [node name="Combat Arts" type="Tabs" parent="PanelContainer2/AbilityTab"]
+visible = false
 margin_right = 40.0
 margin_bottom = 24.0
 
@@ -1114,44 +1115,48 @@ margin_bottom = 140.0
 text = "Acc 2"
 
 [node name="Inventory" type="Tabs" parent="PanelContainer2/AbilityTab"]
-visible = false
 margin_right = 40.0
 margin_bottom = 24.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/AbilityTab/Inventory"]
 margin_right = 794.0
-margin_bottom = 297.0
+margin_bottom = 280.0
 
-[node name="Button" type="Button" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer"]
+margin_right = 395.0
+margin_bottom = 280.0
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer/VBoxContainer"]
+margin_right = 395.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer/VBoxContainer/ScrollContainer"]
+margin_right = 395.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddItem" type="Button" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer/VBoxContainer"]
+margin_top = 260.0
 margin_right = 72.0
-margin_bottom = 20.0
+margin_bottom = 280.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Add Item"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer"]
-margin_left = 76.0
-margin_right = 433.0
-margin_bottom = 297.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer/ScrollContainer"]
-margin_right = 357.0
-margin_bottom = 297.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="ScrollContainer2" type="ScrollContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer"]
-margin_left = 437.0
+margin_left = 399.0
 margin_right = 794.0
-margin_bottom = 297.0
+margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer2/AbilityTab/Inventory/HBoxContainer/ScrollContainer2"]
-margin_right = 357.0
-margin_bottom = 297.0
+margin_right = 395.0
+margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -2015,6 +2020,7 @@ margin_bottom = 591.0
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Label" to="." method="MagicSchoolButtonPressed" binds= [ 17 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Button" to="." method="onSchoolButtonPressPlus" binds= [ false, 17 ]]
 [connection signal="pressed" from="PanelContainer2/AbilityTab/Schools/VBoxContainer2/Physical School 9/Physical School 9 Button2" to="." method="onSchoolButtonPressPlus" binds= [ true, 17 ]]
+[connection signal="pressed" from="PanelContainer2/AbilityTab/Inventory/HBoxContainer/VBoxContainer/AddItem" to="." method="_on_AddItem_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]

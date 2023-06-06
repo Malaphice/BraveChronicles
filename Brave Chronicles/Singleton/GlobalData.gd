@@ -44,8 +44,8 @@ var default_data := {
 		},
 	"Art":
 		{
-			"Equipped": "",
-			"Learned": ["Test 1", "Test 2", "Test 3", "Test 4"],
+			"Equipped": ["Test 1"],
+			"Learned": ["Test 1"],
 			"EquipLimit": 2,
 			"LearnLimit" : 2
 		},
@@ -66,8 +66,8 @@ var default_data := {
 	"Specialty": "",
 	"Item":
 		{
-			"Equipped": "",
-			"Gear": ""
+			"Equipped": ["Test 1"],
+			"Inventory": ["Test 1"]
 		}
 }
 
@@ -91,6 +91,16 @@ var schoolList = [
 	"Stealth",
 	"Unarmed"
 ]
+
+var playerStats := {
+	"PhysicalAttack" : 0,
+	"MagicAttack" : 0,
+	"AttackSpeed" : 0,
+	"PhysicalArmour" : 0,
+	"MagicArmour" : 0,
+	"Evasion" : 0,
+	"Movement" : 0,
+	}
 
 var current_data = default_data
 
