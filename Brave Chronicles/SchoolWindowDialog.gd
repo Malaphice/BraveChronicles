@@ -248,21 +248,43 @@ func _on_itemButton_Pressed(num, item):
 				descriptionEquipList[n].hide()
 
 func addToInventory(item):
-	GlobalData.current_data.Item.Inventory.append(item.Name)
 #	get_node("../../SomeNode/SomeOtherNode")
 #	get_parent().get_parent().get_node("SomeNode")
 #	get_tree().get_root().get_node("SomeNode/SomeOtherNode")
 	#print(get_tree().get_root().get_node("Control/PanelContainer2/AbilityTab/Inventory/HBoxContainer/ScrollContainer/VBoxContainer"))
-	var itemBar = HBoxContainer.new()
-	var itemButton = Button.new()
-	var itemCount = Label.new()
-	itemButton.text = item.Name
-	itemCount.text = "x1"
-	itemBar.add_child(itemButton)
-	itemBar.add_child(itemCount)
-	#CBInventoryList.add_child(itemBar);
-	get_tree().get_root().get_node("Control/PanelContainer2/AbilityTab/Inventory/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer").add_child(itemBar);
-	print(GlobalData.current_data.Item.Inventory)
+	
+	var itemBox = get_tree().get_root().get_node("Control/PanelContainer2/AbilityTab/Inventory/HBoxContainer/VBoxContainer/ScrollContainer/VBoxContainer")
+	
+	var itemCount = 1
+	var newItem = true
+	
+	for invItem in GlobalData.current_data.Item.Inventory:
+		if (invItem == item.Name):
+			itemCount +=1
+			newItem = false
+	
+	if(newItem == false):
+		#for invItem in itemBox.get_children():
+		#	print(invItem)
+		var invItem = itemBox.get_node(item.Name)
+		#invItem.text = String(itemCount)
+		var invItemCountLabel = invItem.get_node(item.Name + "Label")
+		print(invItemCountLabel)
+		invItemCountLabel.text = "x" + String(itemCount)
+	else:
+		var itemBar = HBoxContainer.new()
+		var itemButton = Button.new()
+		var itemCountLabel = Label.new()
+		itemBar.name = item.Name
+		itemButton.text = item.Name
+		itemCountLabel.text = "x" + String(itemCount)
+		itemCountLabel.name = item.Name + "Label"
+		itemBar.add_child(itemButton)
+		itemBar.add_child(itemCountLabel)
+		itemBox.add_child(itemBar);
+		
+	GlobalData.current_data.Item.Inventory.append(item.Name)
+	#print(GlobalData.current_data.Item.Inventory)
 
 func _on_TabContainer_tab_selected(tab):
 	pass # Replace with function body.

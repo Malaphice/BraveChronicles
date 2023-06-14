@@ -413,7 +413,6 @@ margin_bottom = 321.0
 tab_align = 0
 
 [node name="Schools" type="Tabs" parent="PanelContainer2/AbilityTab"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -1115,6 +1114,7 @@ margin_bottom = 140.0
 text = "Acc 2"
 
 [node name="Inventory" type="Tabs" parent="PanelContainer2/AbilityTab"]
+visible = false
 margin_right = 40.0
 margin_bottom = 24.0
 
