@@ -4,7 +4,7 @@ onready var playerNameLabel = $"PanelContainer/Attributes/Name/Name LineEdit"
 onready var lvLabel = $"PanelContainer/Attributes/Level/Level LineEdit"
 onready var lvDiff =  $"PanelContainer/Attributes/Level/Level Change"
 
-onready var SchoolWindow: = preload("res://SchoolWindowDialog.tscn")
+onready var SchoolWindow: = preload("res://AbilityAndEquipmentWindow.tscn")
 
 onready var attributeLabelList = [
 	$"PanelContainer/Attributes/Vitality/Vitality Value",
@@ -414,10 +414,11 @@ func _on_AbilityTab_tab_selected(tab):
 
 
 func _on_AddItem_pressed():
-	GlobalData.abilityTabSelectedSchl = 18
 	var dialog = SchoolWindow.instance()
 	add_child(dialog)
 	dialog.popup()
+	var dialogtab = dialog.get_node("TabContainer")
+	dialogtab.current_tab = 1;
 
 func PopulateArtsList():
 	#learnedArtsBox

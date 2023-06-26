@@ -1,15 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://SchoolWindowDialog.gd" type="Script" id=1]
+[ext_resource path="res://Arts.gd" type="Script" id=2]
+[ext_resource path="res://Equipment.gd" type="Script" id=3]
 
-[node name="SchoolWindowDialog" type="WindowDialog"]
+[node name="AbilityAndEquipmentWindow" type="WindowDialog"]
+visible = true
 margin_right = 600.0
 margin_bottom = 500.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 window_title = "Compendium"
 resizable = true
-script = ExtResource( 1 )
 
 [node name="TabContainer" type="TabContainer" parent="."]
 margin_left = 10.0
@@ -24,6 +25,7 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
+script = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Arts"]
 margin_right = 574.0
@@ -153,6 +155,7 @@ fit_content_height = true
 scroll_following = true
 
 [node name="LearnArt" type="Button" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
+visible = false
 margin_top = 19.0
 margin_right = 390.0
 margin_bottom = 39.0
@@ -160,9 +163,9 @@ toggle_mode = true
 text = "Lean Art"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer"]
-margin_top = 43.0
+margin_top = 19.0
 margin_right = 390.0
-margin_bottom = 43.0
+margin_bottom = 19.0
 
 [node name="Panel2" type="Panel" parent="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2"]
 visible = false
@@ -217,6 +220,7 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
+script = ExtResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Equipment"]
 margin_right = 574.0
@@ -359,6 +363,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [connection signal="tab_selected" from="TabContainer" to="." method="_on_TabContainer_tab_selected"]
-[connection signal="item_selected" from="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="schoolOptionPress"]
+[connection signal="item_selected" from="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/OptionButton" to="TabContainer/Arts" method="schoolOptionPress"]
 [connection signal="pressed" from="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer/Learned Arts" to="." method="filterArts"]
 [connection signal="pressed" from="TabContainer/Arts/MarginContainer/VBoxContainer/HBoxContainer2/ScrollContainer2/VBoxContainer/LearnArt" to="." method="_on_LearnArt_pressed"]
+[connection signal="item_selected" from="TabContainer/Equipment/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer3/OptionButton" to="TabContainer/Equipment" method="itemOptionPress"]

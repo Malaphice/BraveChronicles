@@ -2,8 +2,8 @@ extends Node
 
 
 var playerFilePath = "user://player_data.json"
-var conpendiumTabSelected;
-var abilityTabSelectedSchl;
+var conpendiumTabSelected = 0
+var abilityTabSelectedSchl = -1
 
 var default_data := {
 	"name" : "New Player",
